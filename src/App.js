@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
+import CoinTable from './Components/CoinTable';
+import SearchBar from './Components/SearchBar';
+
+const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=GBP&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+
 
 function App() {
+
+  const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then(res => {
+        setCoins(res.data);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  }
+
+  const filteredCoins = coins.filter(coin => 
+    coin.name.toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="coin-app">
+      <SearchBar handleChange={handleChange} />
+      <CoinTable filteredCoins={ filteredCoins } />
     </div>
   );
 }
