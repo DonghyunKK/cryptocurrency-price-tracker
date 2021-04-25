@@ -6,7 +6,7 @@ import SearchBar from './Components/SearchBar';
 import { useDarkMode } from './styles/useDarkMode';
 import { GlobalStyles, lightTheme, darkTheme } from './styles/globalStyles';
 import { Toggle } from './Components/Toggle';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=GBP&order=market_cap_desc&per_page=100&page=1&sparkline=false"
 
