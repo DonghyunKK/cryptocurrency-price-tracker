@@ -18,9 +18,9 @@ const CoinList = ({ filteredCoins }) => {
             </tr>
           </thead>
             {filteredCoins.map((coin) => {
-            const {id, name, image, symbol, current_price, total_volume,  price_change_percentage_24h, market_cap } = coin;
+            const {market_cap_rank, name, image, symbol, current_price, total_volume,  price_change_percentage_24h, market_cap } = coin;
               return (
-                <tbody key={id}>
+                <tbody key={market_cap_rank}>
                   <tr className="table-row">
                     <td><img src={image} alt={name} className="coin-img"/></td>
                     <td className="coin-name">{name}</td>
