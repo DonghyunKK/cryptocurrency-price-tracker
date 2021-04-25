@@ -1,5 +1,6 @@
 .coin-container {
   width: 100%;
+  padding-top: 4rem;
 }
 
 .coin-table {
@@ -37,4 +38,10 @@ th {
 
 .green {
   color: #11d811;
+}
+
+@media screen and (max-width: 768px) {
+  .small-screen {
+    display: none;
+  }
 }

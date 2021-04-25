@@ -5,7 +5,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 const SearchBar = ({ handleChange }) => {
   return (
     <div className="coin-search">
-      <h1>Coin24</h1>
+      <h1 className="title">Coin24</h1>
       <div className="search-container">
       <form className="search-form">
         <input type="text" placeholder="Search" className="search-input" onChange={handleChange} />
