@@ -1,12 +1,17 @@
 import React from 'react';
+import './SearchBar.css';
+import { AiOutlineSearch } from 'react-icons/ai'
 
 const SearchBar = ({ handleChange }) => {
   return (
-    <div className="coin-search"> 
-      <h1 className="coin-text">Search a currency</h1>
-      <form>
-        <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
+    <div className="coin-search">
+      <h1>Coin24</h1>
+      <div className="search-container">
+      <form className="search-form">
+        <input type="text" placeholder="Search" className="search-input" onChange={handleChange} />
       </form>
+      <AiOutlineSearch className="icon" />
+      </div>
     </div>
   )
 };

@@ -1,0 +1,40 @@
+.coin-container {
+  width: 100%;
+}
+
+.coin-table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.coin-img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table-row {
+  height: 5rem;
+  border-bottom: 2px solid #80bef5;
+}
+
+td {
+  text-align: center;
+}
+
+th {
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.red {
+  color: #f00606;
+}
+
+.green {
+  color: #11d811;
+}

@@ -28,10 +28,10 @@ function App() {
   const filteredCoins = coins.filter(coin => 
     coin.name.toLowerCase().includes(search.toLowerCase())
   )
-
+  
   return (
-    <div className="coin-app">
-      <SearchBar handleChange={handleChange} />
+    <div className="container">
+      <SearchBar handleChange={ handleChange } />
       <CoinTable filteredCoins={ filteredCoins } />
     </div>
   );
